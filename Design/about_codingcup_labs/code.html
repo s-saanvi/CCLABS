@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1c18",
+                    "secondary": "#785a00",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e5e2db",
+                    "on-tertiary-container": "#548f7b",
+                    "inverse-on-surface": "#f3f0e9",
+                    "secondary-fixed-dim": "#edc157",
+                    "on-tertiary-fixed": "#002118",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dcdad3",
+                    "secondary-container": "#ffd167",
+                    "primary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#444748",
+                    "secondary-fixed": "#ffdf9b",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf9f2",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-fixed-variant": "#0d503f",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fcf9f2",
+                    "surface-tint": "#5f5e5e",
+                    "inverse-surface": "#31312c",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#b1efd8",
+                    "surface-container-low": "#f6f3ec",
+                    "background": "#fcf9f2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#002118",
+                    "on-background": "#1c1c18",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e5e2db",
+                    "surface-container-high": "#ebe8e1",
+                    "on-secondary-fixed": "#251a00",
+                    "primary-container": "#1c1b1b",
+                    "tertiary-fixed-dim": "#96d3bd",
+                    "on-secondary-container": "#765900",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "surface-container": "#f1eee7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "stack-lg": "48px",
+                    "stack-sm": "8px",
+                    "stack-md": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "h1": ["Syne"],
+                    "label-caps": ["DM Mono"],
+                    "h2": ["Syne"],
+                    "body-lg": ["DM Mono"],
+                    "h3": ["Syne"],
+                    "body-md": ["DM Mono"]
+            },
+            "fontSize": {
+                    "h1": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "h2": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f2;
+            background-image: radial-gradient(#dcdad3 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neobrutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .neobrutalist-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .timeline-scroll::-webkit-scrollbar-track {
+            background: #e5e2db;
+        }
+        .timeline-scroll::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="antialiased text-on-background">
+<nav class="fixed top-0 w-full z-50 border-b-4 border-zinc-900 bg-white">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-8 py-4">
+<span class="text-2xl font-black tracking-tighter text-zinc-900">CodingCup Labs</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 hover:bg-zinc-100 transition-colors" href="#">Services</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 hover:bg-zinc-100 transition-colors" href="#">Projects</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 hover:bg-zinc-100 transition-colors" href="#">Blog</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-900 border-b-2 border-zinc-900 pb-1" href="#">About</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 neobrutalist-shadow font-['Syne'] font-extrabold uppercase tracking-tight active:scale-95 transition-transform">
+                Work With Us
+            </button>
+</div>
+</nav>
+<main class="mt-32">
+<section class="max-w-[1200px] mx-auto px-8 pb-[120px]">
+<div class="space-y-gutter">
+<span class="font-label-caps text-label-caps text-secondary uppercase block mb-4">Engineering Manifesto</span>
+<h1 class="font-h1 text-h1 max-w-4xl">We Are CodingCup Labs</h1>
+<div class="max-w-3xl">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Our mission is to dismantle the complexity of modern software architecture. We believe in building systems that are as transparent as they are powerful. By adhering to the principles of architectural rigor and honest engineering, we craft digital products that don't just function—they endure. No smoke, no mirrors, just clean logic and uncompromising performance.
+                    </p>
+</div>
+</div>
+</section>
+<section class="border-y-4 border-primary bg-surface-container py-[120px]">
+<div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-5 space-y-8">
+<h2 class="font-h2 text-h2">Our Core Values</h2>
+<ul class="space-y-6">
+<li class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="architecture">architecture</span>
+<div>
+<h3 class="font-h3 text-[24px] mb-2">Structural Integrity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We build on foundations that survive scale. Every line of code is a structural choice.</p>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="visibility">visibility</span>
+<div>
+<h3 class="font-h3 text-[24px] mb-2">Radical Transparency</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Engineering is not magic. We expose our process so you understand your system.</p>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+<div>
+<h3 class="font-h3 text-[24px] mb-2">Performant Logic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Efficiency is the highest form of beauty. We optimize for speed and sustainability.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-white p-8 border-4 border-primary neobrutalist-shadow transition-all group">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden border-2 border-primary">
+<img alt="Lead Architect" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all" data-alt="A professional portrait of a tech-focused lead architect with sharp features, wearing a minimalist black turtleneck. The lighting is dramatic, high-contrast, echoing a neobrutalist aesthetic with hard shadows. The background is a clean, off-white studio setting with subtle geometric shadows, maintaining a sophisticated engineering atmosphere in a light-mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc13_sjVQBJXEb-8aKj4PHeDl3osFxjtKLuYWR2f1YI4tw7YB8ECbWX3nUpqKLHWfFtiNXM_WJgOAMylj6wOMVbpkCHDqWW_lXQhNdxSxj98j0s6JHnWPR54Ghc7x8-QqbGrIMdLhCVME2WsWi-bgbGihteoQuO-LRQ0tLZxrKpqzPAgx0zeV6E7CshNnl9y9SJKWs8ydyHktSPLWy2i1vYQEm66oLjVIgwuHaWALtVuRlaiwno1fpl3i3BP-JqgUgfko29LeCVxE"/>
+</div>
+<h3 class="font-h3 text-[28px]">Elena Vance</h3>
+<span class="font-label-caps text-secondary text-xs uppercase mb-4 block">Lead Architect</span>
+<p class="font-body-md text-body-md">Visionary behind our core infrastructure. Elena specializes in distributed systems and fault-tolerant design.</p>
+</div>
+<div class="bg-white p-8 border-4 border-primary neobrutalist-shadow transition-all group">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden border-2 border-primary">
+<img alt="Senior Engineer" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all" data-alt="A portrait of a senior software engineer in a modern industrial workspace. The subject is looking directly into the camera with a confident expression, surrounded by subtle hints of engineering like a glass wall with architectural diagrams. The lighting is crisp and bright, focusing on the textures of the minimalist environment. The aesthetic is clean, monochromatic, and structurally intentional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT9hEilaR-BJACOFyS8NT_PsXsBzpc52cibbOqkZMzmL3OUrMVkWcs5S1PU1tk1dBpLkP7oKATufMiMt3vlIEgnQs7LcS8gmnZAw3O-0ho2vMZzpWFDCk8RO2BSsvdXbo12hltDU2G_jB8de-bFvUE2EoOpomJuVUHBEidd-9_NgCPzk2pKXQpploNywa7Gz5XXbJQEHFeJkwIvTlgZQTo41diAFqA3yQu5eQTqBbrZS4mAA49Rb1HpHMrAvK6pyOVUG4FWAfZFvs"/>
+</div>
+<h3 class="font-h3 text-[28px]">Marcus Thorne</h3>
+<span class="font-label-caps text-secondary text-xs uppercase mb-4 block">Senior Systems Engineer</span>
+<p class="font-body-md text-body-md">The master of optimization. Marcus ensures our applications run with lightning speed and minimal resource overhead.</p>
+</div>
+<div class="bg-white p-8 border-4 border-primary neobrutalist-shadow transition-all group lg:col-span-2">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3 aspect-square bg-surface-container overflow-hidden border-2 border-primary">
+<img alt="UX Lead" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all" data-alt="A close-up portrait of a UI/UX designer with a modern, artistic look. The setting is a bright, high-key studio with architectural shadows. The lighting highlights the subject's sharp, confident features against a neutral warm background. The overall style is sophisticated and architectural, fitting a premium engineering agency's brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCby9q56r1GCpYQRoMbXiciXAVa9kMdVb6juEjZYwApnnv2cIYSKZDr6pnrGWH65fK09rB85APM0WchrmGQBa0pIFCyUiu8Sr2vl-xIQDcja9v9ajifleopojyekcah4lam95o3qVdozersJpiX6fTmBHJ7jvmwmq_JrSLYQ-fSxWPa5Y3QOnqiriP5DzRNb56gnnw3-JrjCodpHGO59-aojQxgE60uX6FSTE1DXPbnA4wF3U1xFTAiz18wF0ZFERal4hgZvgJC7LI"/>
+</div>
+<div class="w-full md:w-2/3">
+<h3 class="font-h3 text-[28px]">Sarah Chen</h3>
+<span class="font-label-caps text-secondary text-xs uppercase mb-4 block">Head of Interface Logic</span>
+<p class="font-body-md text-body-md">Sarah bridges the gap between raw engineering and human interaction. She believes that a great interface is an honest one.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-[120px] overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-8 mb-16">
+<h2 class="font-h2 text-h2">Evolutionary Milestones</h2>
+</div>
+<div class="timeline-scroll flex overflow-x-auto gap-8 px-8 pb-12 snap-x cursor-grab active:cursor-grabbing">
+<div class="min-w-[400px] snap-start bg-white p-12 border-4 border-primary neobrutalist-shadow">
+<span class="font-label-caps text-secondary text-xl mb-4 block">2021</span>
+<h4 class="font-h3 text-[24px] mb-4">The Launch</h4>
+<p class="font-body-md text-body-md">CodingCup Labs founded in a garage with a focus on rewriting legacy systems for the modern era.</p>
+</div>
+<div class="min-w-[400px] snap-start bg-white p-12 border-4 border-primary neobrutalist-shadow">
+<span class="font-label-caps text-secondary text-xl mb-4 block">2022</span>
+<h4 class="font-h3 text-[24px] mb-4">Expansion</h4>
+<p class="font-body-md text-body-md">First major contract with a global fintech firm to rebuild their core transaction engine from scratch.</p>
+</div>
+<div class="min-w-[400px] snap-start bg-white p-12 border-4 border-primary neobrutalist-shadow">
+<span class="font-label-caps text-secondary text-xl mb-4 block">2023</span>
+<h4 class="font-h3 text-[24px] mb-4">Architectural Award</h4>
+<p class="font-body-md text-body-md">Recognized for 'Excellence in Structural Engineering' by the Global Software Consortium.</p>
+</div>
+<div class="min-w-[400px] snap-start bg-white p-12 border-4 border-primary neobrutalist-shadow">
+<span class="font-label-caps text-secondary text-xl mb-4 block">2024</span>
+<h4 class="font-h3 text-[24px] mb-4">The Future</h4>
+<p class="font-body-md text-body-md">Scaling our engineering team to tackle decentralized identity and autonomous logic systems.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-zinc-900 w-full border-t-4 border-zinc-900 rounded-none">
+<div class="max-w-[1200px] mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<span class="text-xl font-black text-zinc-50">CodingCup Labs</span>
+<p class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400">© 2024 CodingCup Labs. Engineering with architectural rigor.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-50 uppercase mb-4">Ecosystem</span>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Twitter</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">GitHub</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-50 uppercase mb-4">Legal</span>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Terms</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

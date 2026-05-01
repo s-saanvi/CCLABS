@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact — CodingCup Labs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1c18",
+                    "secondary": "#785a00",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e5e2db",
+                    "on-tertiary-container": "#548f7b",
+                    "inverse-on-surface": "#f3f0e9",
+                    "secondary-fixed-dim": "#edc157",
+                    "on-tertiary-fixed": "#002118",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dcdad3",
+                    "secondary-container": "#ffd167",
+                    "primary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#444748",
+                    "secondary-fixed": "#ffdf9b",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf9f2",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-fixed-variant": "#0d503f",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fcf9f2",
+                    "surface-tint": "#5f5e5e",
+                    "inverse-surface": "#31312c",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#b1efd8",
+                    "surface-container-low": "#f6f3ec",
+                    "background": "#fcf9f2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#002118",
+                    "on-background": "#1c1c18",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e5e2db",
+                    "surface-container-high": "#ebe8e1",
+                    "on-secondary-fixed": "#251a00",
+                    "primary-container": "#1c1b1b",
+                    "tertiary-fixed-dim": "#96d3bd",
+                    "on-secondary-container": "#765900",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "surface-container": "#f1eee7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "stack-lg": "48px",
+                    "stack-sm": "8px",
+                    "stack-md": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "h1": ["Syne"],
+                    "label-caps": ["DM Mono"],
+                    "h2": ["Syne"],
+                    "body-lg": ["DM Mono"],
+                    "h3": ["Syne"],
+                    "body-md": ["DM Mono"]
+            },
+            "fontSize": {
+                    "h1": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "h2": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #1c1c18;
+        }
+        .hard-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1c1c18;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#1c1c18 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-focus-yellow:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px #ffd167;
+            border-color: #1c1c18;
+        }
+        .pulse-green {
+            box-shadow: 0 0 0 0 rgba(84, 143, 123, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(84, 143, 123, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(84, 143, 123, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(84, 143, 123, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b-4 border-zinc-900 bg-white">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-8 py-4">
+<div class="text-2xl font-black tracking-tighter text-zinc-900">
+                CodingCup Labs
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 transition-colors" href="#">Services</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 transition-colors" href="#">Projects</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 transition-colors" href="#">Blog</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 font-medium hover:text-zinc-900 transition-colors" href="#">About</a>
+<button class="bg-primary text-white font-['Syne'] font-extrabold uppercase tracking-tight px-6 py-2 border-2 border-primary active:scale-95 transition-transform">
+                    Work With Us
+                </button>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative min-h-screen pt-[120px] pb-[120px] overflow-hidden">
+<!-- Dot Grid Texture -->
+<div class="absolute inset-0 dot-grid -z-10"></div>
+<div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Contact Info Block -->
+<div class="lg:col-span-5 space-y-12">
+<div>
+<h1 class="font-h1 text-h1 mb-6">Let's build.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Engineering architectural rigor into digital interfaces. Drop a line to start our next sprint together.
+                    </p>
+</div>
+<div class="space-y-8">
+<!-- Status Indicator -->
+<div class="inline-flex items-center gap-3 bg-surface-container border-2 border-on-surface px-4 py-2 hard-shadow">
+<span class="w-3 h-3 bg-on-tertiary-container rounded-full pulse-green"></span>
+<span class="font-label-caps text-label-caps uppercase">Open to projects</span>
+</div>
+<!-- Contact Details -->
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="alternate_email">alternate_email</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">EMAIL</p>
+<p class="font-body-lg text-body-lg font-bold">hello@codingcup.labs</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LOCATION</p>
+<p class="font-body-lg text-body-lg font-bold">Berlin, DE // Remote World</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Links Row -->
+<div class="pt-8 border-t-2 border-on-surface space-y-4">
+<p class="font-label-caps text-label-caps">FIND US ELSEWHERE</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md font-bold hover:text-secondary underline decoration-2 underline-offset-4" href="#">TWITTER</a>
+<a class="font-body-md text-body-md font-bold hover:text-secondary underline decoration-2 underline-offset-4" href="#">GITHUB</a>
+<a class="font-body-md text-body-md font-bold hover:text-secondary underline decoration-2 underline-offset-4" href="#">LINKEDIN</a>
+</div>
+</div>
+</div>
+<!-- Right: Neobrutalist Form -->
+<div class="lg:col-span-7">
+<div class="bg-white border-4 border-on-surface p-8 md:p-12 hard-shadow">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps block">NAME*</label>
+<input class="w-full bg-surface-container-lowest border-2 border-on-surface p-4 font-body-md text-body-md input-focus-yellow transition-all" placeholder="Your full name" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps block">EMAIL*</label>
+<input class="w-full bg-surface-container-lowest border-2 border-on-surface p-4 font-body-md text-body-md input-focus-yellow transition-all" placeholder="email@example.com" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps block">SUBJECT</label>
+<select class="w-full bg-surface-container-lowest border-2 border-on-surface p-4 font-body-md text-body-md input-focus-yellow appearance-none transition-all">
+<option>New Project Inquiry</option>
+<option>Partnership</option>
+<option>Career / Freelance</option>
+<option>General Hello</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps block">MESSAGE*</label>
+<textarea class="w-full bg-surface-container-lowest border-2 border-on-surface p-4 font-body-md text-body-md input-focus-yellow transition-all resize-none" placeholder="Tell us about your project architectural goals..." required="" rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto bg-on-surface text-white px-12 py-5 font-h3 text-h3 uppercase tracking-tight hard-shadow-hover transition-all active:translate-y-1 active:shadow-none" type="submit">
+                            Send Message
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Map/Visual Section -->
+<section class="max-w-[1200px] mx-auto px-8 pb-[120px]">
+<div class="h-[400px] w-full border-4 border-on-surface relative overflow-hidden hard-shadow">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="A highly detailed architectural landscape photograph of Berlin's modern skyline at dusk. The image features sharp, geometric buildings illuminated by cool blue and warm yellow lights, creating a high-contrast environment. The visual style is crisp and professional, using a neutral palette that aligns with a neobrutalist aesthetic, grounding the project in its European location with structural honesty and sophisticated engineering." data-location="Berlin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ovMCLdjq5MGDo89_YCQwpday1AbbqNtDQoQy9JNhQAKR5BkXN7iyBBndXuHS_6L5PnhrtrL7JieDOLScK9PpiiE9KQez8DwZxkiHqQqFkS3F5UYfTeWEYoSCsIf-765CvmYwtqMO91Nuoy04DxQWLEM2Ulf9mPHOgdFwT7jHKZ6i39riNU_IVJqR_aGFfHpqaO83kjI9zLJjQDJVw64nuz1_BNpEVqZXjwNlnccXXPUcHRS7YRXZNEA-l3Yq-txq9PbfyJ79Nqc"/>
+<div class="absolute inset-0 bg-secondary/10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 bg-white border-2 border-on-surface px-6 py-4 hard-shadow">
+<p class="font-h3 text-h3">HQ: BERLIN</p>
+<p class="font-label-caps text-label-caps">52.5200° N, 13.4050° E</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t-4 border-zinc-900 bg-zinc-900">
+<div class="max-w-[1200px] mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="text-xl font-black text-zinc-50">CodingCup Labs</div>
+<p class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400">© 2024 CodingCup Labs. Engineering with architectural rigor.</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Twitter</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">GitHub</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Terms</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

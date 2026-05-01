@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | CodingCup Labs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1c18",
+                    "secondary": "#785a00",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e5e2db",
+                    "on-tertiary-container": "#548f7b",
+                    "inverse-on-surface": "#f3f0e9",
+                    "secondary-fixed-dim": "#edc157",
+                    "on-tertiary-fixed": "#002118",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dcdad3",
+                    "secondary-container": "#ffd167",
+                    "primary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#444748",
+                    "secondary-fixed": "#ffdf9b",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf9f2",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-fixed-variant": "#0d503f",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fcf9f2",
+                    "surface-tint": "#5f5e5e",
+                    "inverse-surface": "#31312c",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#b1efd8",
+                    "surface-container-low": "#f6f3ec",
+                    "background": "#fcf9f2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#002118",
+                    "on-background": "#1c1c18",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e5e2db",
+                    "surface-container-high": "#ebe8e1",
+                    "on-secondary-fixed": "#251a00",
+                    "primary-container": "#1c1b1b",
+                    "tertiary-fixed-dim": "#96d3bd",
+                    "on-secondary-container": "#765900",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "surface-container": "#f1eee7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "stack-lg": "48px",
+                    "stack-sm": "8px",
+                    "stack-md": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "h1": ["Syne"],
+                    "label-caps": ["DM Mono"],
+                    "h2": ["Syne"],
+                    "body-lg": ["DM Mono"],
+                    "h3": ["Syne"],
+                    "body-md": ["DM Mono"]
+            },
+            "fontSize": {
+                    "h1": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "h2": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f2;
+            background-image: radial-gradient(#dcdad3 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neobrutal-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .neobrutal-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .service-row:hover .service-number {
+            color: #000000;
+            -webkit-text-stroke: 1px #000000;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b-4 border-zinc-900 bg-white dark:bg-zinc-900">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-8 py-4">
+<div class="text-2xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50">
+                CodingCup Labs
+            </div>
+<div class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-900 dark:text-zinc-50 border-b-2 border-zinc-900 dark:border-zinc-50 pb-1" href="#">Services</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors" href="#">Projects</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors" href="#">Blog</a>
+<a class="font-['Syne'] font-extrabold uppercase tracking-tight text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors" href="#">About</a>
+</div>
+<button class="neobrutal-shadow neobrutal-hover bg-on-surface text-white px-6 py-2 font-h3 text-body-md uppercase tracking-widest active:scale-95 transition-all">
+                Work With Us
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-section-padding px-8">
+<div class="max-w-[1200px] mx-auto">
+<!-- Hero Section -->
+<header class="mb-24">
+<p class="font-label-caps text-label-caps text-secondary mb-4">CAPABILITIES</p>
+<h1 class="font-h1 text-h1 text-primary max-w-4xl">Engineering Excellence <br/> As A Service.</h1>
+</header>
+<!-- Services List -->
+<section class="space-y-0">
+<!-- 01 Web Development -->
+<div class="service-row group border-t-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">01</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">Web Development</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">High-performance, scalable web applications built with architectural rigor and modern frameworks.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="terminal">terminal</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 02 Mobile Apps -->
+<div class="service-row group border-t-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">02</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">Mobile Apps</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Native and cross-platform mobile experiences that feel seamless, fast, and robust on any device.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="smartphone">smartphone</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 03 UI/UX Design -->
+<div class="service-row group border-t-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">03</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">UI/UX Design</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Human-centric interfaces that balance bold neobrutalist aesthetics with intuitive user journeys.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="draw">draw</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 04 API & Backend -->
+<div class="service-row group border-t-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">04</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">API &amp; Backend</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">The silent engine. We build secure, distributed systems and REST/GraphQL APIs that power the world.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="database">database</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 05 Technical Consulting -->
+<div class="service-row group border-t-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">05</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">Technical Consulting</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Architecture reviews, performance audits, and strategic technical planning for growing teams.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="architecture">architecture</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 06 Open Source -->
+<div class="service-row group border-t-4 border-b-4 border-primary py-12 flex flex-col md:flex-row md:items-center justify-between transition-all hover:bg-white/50">
+<div class="flex items-baseline gap-12 md:w-1/2">
+<span class="service-number font-h1 text-h1 text-transparent opacity-20 transition-colors" style="-webkit-text-stroke: 2px #000000;">06</span>
+<div>
+<h3 class="font-h2 text-h2 mb-4">Open Source</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">We contribute to and maintain critical infrastructure that the developer community depends on every day.</p>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-8">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="code_blocks">code_blocks</span>
+<div class="neobrutal-shadow p-2 bg-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Preview Section -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-secondary-container neobrutal-shadow p-12 border-4 border-primary">
+<h4 class="font-h3 text-h3 mb-4">Proprietary Stacks</h4>
+<p class="font-body-lg text-body-lg mb-8 max-w-lg">We don't just use tools; we master them. From Rust performance optimizations to React interactivity, our stack is chosen for durability.</p>
+<img class="w-full h-64 object-cover border-4 border-primary grayscale hover:grayscale-0 transition-all duration-500" data-alt="A clean, minimalist high-angle shot of a high-end keyboard and a sleek laptop on a light-toned wooden desk. The lighting is bright and airy with sharp, hard shadows following a neobrutalist aesthetic. The color palette is dominated by off-whites, light grays, and deep black accents. The scene conveys professional engineering rigor and modern digital craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwnDKoTBPEaoFzOiKtId7ADWIw6n7e8lwucj9s2HbfqhD7_uUJd3N3Lf92qI1tn6HflhJHe39xUKLDkesL7-T6DeuQxe6ANlrpXW31e-lPtjD36JbXTkstGPzX5HXGgyUdSrAiIF_65WBcQb36UYV6wkI0_pp6RsL0t0L8caJNZtObygcB3klRZSWkZjs6HQ2zAxFjysxvYTW2UPSG8YQ0_4vl8dFxCWkU4D8WzOQxm_s-Bx_V4LusThj_E2vps-DN8VhOENgt3Wc"/>
+</div>
+<div class="bg-primary text-white neobrutal-shadow p-12 border-4 border-primary flex flex-col justify-between">
+<div>
+<h4 class="font-h3 text-h3 mb-4">Weekly Sprints</h4>
+<p class="font-body-md text-body-md opacity-80">Ship fast, iterate often. Our cycle is built for velocity without sacrificing the integrity of the code.</p>
+</div>
+<div class="text-[80px] font-h1 leading-none text-secondary">84%</div>
+<div class="font-label-caps text-label-caps uppercase">Faster Deployment</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="mt-32">
+<div class="bg-white border-4 border-primary p-12 md:p-20 text-center neobrutal-shadow relative overflow-hidden">
+<!-- Background Accent -->
+<div class="absolute -right-10 -bottom-10 opacity-5 rotate-12">
+<span class="material-symbols-outlined text-[300px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h2 class="font-h1 text-h2 md:text-h1 mb-8 relative z-10">Ready to ship something great?</h2>
+<p class="font-body-lg text-body-lg mb-12 max-w-2xl mx-auto relative z-10 text-on-surface-variant">We're currently taking on new projects for Q4. Let's discuss your architectural needs.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+<button class="neobrutal-shadow neobrutal-hover bg-primary text-white px-12 py-5 font-h3 text-h3 uppercase tracking-tighter transition-all">
+                            Start a Project
+                        </button>
+<button class="neobrutal-shadow neobrutal-hover bg-white text-primary border-4 border-primary px-12 py-5 font-h3 text-h3 uppercase tracking-tighter transition-all">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-4 border-zinc-900 bg-zinc-900 dark:bg-black">
+<div class="max-w-[1200px] mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-black text-zinc-50 dark:text-zinc-100 uppercase tracking-tighter">
+                    CodingCup Labs
+                </div>
+<p class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 dark:text-zinc-500 max-w-xs">
+                    Engineering with architectural rigor. We build the infrastructure of tomorrow with the precision of today.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-white font-bold uppercase tracking-widest text-xs">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-50 underline underline-offset-4" href="#">Services</a></li>
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all inline-block" href="#">Projects</a></li>
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all inline-block" href="#">Blog</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-bold uppercase tracking-widest text-xs">Social</h5>
+<ul class="space-y-2">
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all inline-block" href="#">Twitter</a></li>
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all inline-block" href="#">GitHub</a></li>
+<li><a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50 hover:translate-x-1 transition-all inline-block" href="#">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6 border-l-0 md:border-l-2 border-zinc-800 md:pl-12">
+<p class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400">© 2024 CodingCup Labs. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50" href="#">Terms</a>
+<a class="font-['Syne'] font-bold text-sm tracking-wide text-zinc-400 hover:text-zinc-50" href="#">Privacy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
