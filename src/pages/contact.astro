@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout title="Contact">
+  <Navbar />
+
+  <main>
+    <HeroSection
+      title="Get in Touch"
+      subtitle="Ready to start a project? We'd love to hear from you."
+    />
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Let's build something.</h2>
+          <p>Whether you have a specific project in mind or just want to explore possibilities, reach out.</p>
+
+          <div class="info-block">
+            <h3>Email</h3>
+            <a href="mailto:hello@codingcuplabs.com">hello@codingcuplabs.com</a>
+          </div>
+
+          <div class="info-block">
+            <h3>Social</h3>
+            <div class="social-links">
+              <a href="#">Twitter</a>
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contact-info h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-info p {
+    font-size: var(--text-lg);
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--space-xl);
+  }
+
+  .info-block {
+    margin-bottom: var(--space-lg);
+  }
+
+  .info-block h3 {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .info-block a {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+
+  .info-block a:hover {
+    text-decoration: underline;
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .contact-form-wrapper {
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-group label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--color-surface-container-lowest);
+    color: var(--color-text);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 2px 2px 0px 0px var(--color-secondary);
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--text-base);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.15s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+</style>

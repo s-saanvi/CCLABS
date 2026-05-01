@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'E-commerce Platform Redesign',
+    category: 'Web Development',
+    description: 'A complete overhaul of a legacy e-commerce system, focusing on performance and a modern neobrutalist aesthetic.',
+    link: '#',
+  },
+  {
+    title: 'Financial Dashboard',
+    category: 'UI/UX Design',
+    description: 'A data-heavy dashboard designed for clarity and rapid data comprehension using structural layouts.',
+    link: '#',
+  },
+  {
+    title: 'Design System Implementation',
+    category: 'Engineering',
+    description: 'Building a comprehensive design system utilizing Astro and CSS custom properties for a large enterprise.',
+    link: '#',
+  },
+  {
+    title: 'Marketing Site for SaaS',
+    category: 'Web Design',
+    description: 'A high-converting marketing website with bold typography and clear calls to action.',
+    link: '#',
+  }
+];
+---
+
+<BaseLayout title="Projects">
+  <Navbar />
+
+  <main>
+    <HeroSection
+      title="Our Work"
+      subtitle="A selection of our recent projects showcasing our commitment to structural design and engineering."
+    />
+
+    <section class="section">
+      <div class="container grid">
+        {projects.map((project) => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

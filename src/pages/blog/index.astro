@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog">
+  <Navbar />
+
+  <main>
+    <HeroSection
+      title="Writing"
+      subtitle="Thoughts, tutorials, and insights on engineering and design from the CodingCup Labs team."
+    />
+
+    <section class="section">
+      <div class="container grid">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.pubDate}
+            slug={post.slug}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

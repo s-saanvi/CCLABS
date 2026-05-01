@@ -1,0 +1,104 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a href={`${import.meta.env.BASE_URL}`} class="logo">
+      CCLABS
+    </a>
+    <nav class="nav-links">
+      {links.map((link) => {
+        const url = `${import.meta.env.BASE_URL}${link.href.startsWith('/') ? link.href.slice(1) : link.href}`;
+        const isActive = currentPath === url || (link.href !== '/' && currentPath.startsWith(url));
+        return (
+          <a href={url} class={`nav-link ${isActive ? 'active' : ''}`}>
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+    <a href={`${import.meta.env.BASE_URL}contact`} class="contact-btn">
+      Get in touch
+    </a>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    border-bottom: var(--border-width) solid var(--border-color);
+    background-color: var(--color-surface);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--text-lg);
+    letter-spacing: -0.03em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 8px;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

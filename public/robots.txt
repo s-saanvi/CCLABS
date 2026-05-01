@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://s-saanvi.github.io/CCLABS/sitemap-index.xml

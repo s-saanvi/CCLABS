@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<BaseLayout title="Services">
+  <Navbar />
+
+  <main>
+    <HeroSection
+      title="Services"
+      subtitle="We offer a focused set of services to help you build robust digital products."
+    />
+
+    <section class="section">
+      <div class="container grid">
+        <ServiceCard
+          icon="web"
+          title="Web Development"
+          description="We build fast, accessible, and scalable web applications using modern frameworks like Astro and vanilla web technologies."
+        />
+        <ServiceCard
+          icon="architecture"
+          title="System Architecture"
+          description="Designing robust technical foundations for your applications, ensuring they can scale with your business."
+        />
+        <ServiceCard
+          icon="palette"
+          title="Design Systems"
+          description="Creating comprehensive design systems that bridge the gap between design and engineering, ensuring consistency."
+        />
+        <ServiceCard
+          icon="speed"
+          title="Performance Tuning"
+          description="Analyzing and optimizing existing applications to improve load times, responsiveness, and overall user experience."
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+</style>
