@@ -1,11 +1,10 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://s-saanvi.github.io',
-  base: '/',
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  base: '/CCLABS',
+  output: 'static',
+  integrations: [mdx(), sitemap()],
 });

@@ -1,0 +1,88 @@
+---
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h2 class="logo">CCLABS</h2>
+      <p class="tagline">Engineering clarity.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <h3>Company</h3>
+        <a href={`${import.meta.env.BASE_URL}about`}>About</a>
+        <a href={`${import.meta.env.BASE_URL}services`}>Services</a>
+        <a href={`${import.meta.env.BASE_URL}contact`}>Contact</a>
+      </div>
+      <div class="link-group">
+        <h3>Resources</h3>
+        <a href={`${import.meta.env.BASE_URL}projects`}>Projects</a>
+        <a href={`${import.meta.env.BASE_URL}blog`}>Blog</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {new Date().getFullYear()} CodingCup Labs. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: var(--border-width) solid var(--border-color);
+    background-color: var(--color-surface-container-low);
+    padding-top: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .logo {
+    margin-bottom: var(--space-xs);
+  }
+
+  .tagline {
+    color: var(--color-on-surface-variant);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .link-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .link-group h3 {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .link-group a {
+    color: var(--color-on-surface-variant);
+  }
+
+  .link-group a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-top: var(--border-width) solid var(--border-color);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-on-surface-variant);
+  }
+</style>

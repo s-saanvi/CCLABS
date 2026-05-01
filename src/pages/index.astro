@@ -1,11 +1,70 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <Navbar />
+
+  <main>
+    <HeroSection
+      title="Engineering clarity."
+      subtitle="We build structural, honest, and high-performance digital environments for modern brands."
+      primaryAction={{ label: 'Our Work', href: '/projects' }}
+      secondaryAction={{ label: 'Get in Touch', href: '/contact' }}
+    />
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Core Capabilities</h2>
+          <p>We focus on raw engineering and intentional design.</p>
+        </div>
+        <div class="grid">
+          <ServiceCard
+            icon="code"
+            title="Technical Architecture"
+            description="Robust, scalable systems built with modern stacks to ensure long-term stability."
+          />
+          <ServiceCard
+            icon="design_services"
+            title="Systematic Design"
+            description="Component-driven interfaces focused on clarity, performance, and accessibility."
+          />
+          <ServiceCard
+            icon="speed"
+            title="Performance Optimization"
+            description="Tuning applications for maximum speed and efficiency in production."
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-xl);
+    max-width: 800px;
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: var(--text-lg);
+    color: var(--color-on-surface-variant);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+</style>

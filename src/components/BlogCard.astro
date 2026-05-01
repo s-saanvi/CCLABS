@@ -1,0 +1,102 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+  tags?: string[];
+}
+
+const { title, description, date, slug, tags = [] } = Astro.props;
+---
+
+<article class="blog-card">
+  <div class="card-content">
+    <div class="meta">
+      <time datetime={date.toISOString()}>
+        {date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </time>
+    </div>
+    <h3 class="title">
+      <a href={`${import.meta.env.BASE_URL}blog/${slug}`}>{title}</a>
+    </h3>
+    <p class="description">{description}</p>
+    {tags.length > 0 && (
+      <div class="tags">
+        {tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .blog-card {
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .meta {
+    font-size: var(--text-sm);
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-body);
+  }
+
+  .title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .title a {
+    text-decoration: none;
+  }
+
+  .title a:hover {
+    text-decoration: underline;
+  }
+
+  .description {
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .tag {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    background-color: var(--color-surface-variant);
+    color: var(--color-on-surface);
+    border-radius: 999px; /* Pill shape as per DESIGN.md */
+    border: 1px solid var(--border-color);
+  }
+</style>

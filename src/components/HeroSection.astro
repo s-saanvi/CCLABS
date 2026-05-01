@@ -1,0 +1,66 @@
+---
+import CTAButton from './CTAButton.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  primaryAction?: { label: string; href: string };
+  secondaryAction?: { label: string; href: string };
+}
+
+const { title, subtitle, primaryAction, secondaryAction } = Astro.props;
+---
+
+<section class="hero section">
+  <div class="container hero-inner">
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-actions">
+      {primaryAction && (
+        <CTAButton href={primaryAction.href} variant="primary">
+          {primaryAction.label}
+        </CTAButton>
+      )}
+      {secondaryAction && (
+        <CTAButton href={secondaryAction.href} variant="outline">
+          {secondaryAction.label}
+        </CTAButton>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    /* Subtle dot grid pattern */
+    background-image: radial-gradient(var(--color-outline-variant) 1px, transparent 0);
+    background-size: 24px 24px;
+    background-position: -19px -19px;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-size: var(--text-hero);
+    margin-bottom: 0;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-base);
+    color: var(--color-on-surface-variant);
+    max-width: 600px;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+</style>

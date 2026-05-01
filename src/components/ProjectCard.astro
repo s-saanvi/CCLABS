@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  link?: string;
+}
+
+const { title, category, description, link } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="card-header">
+    <span class="category">{category}</span>
+  </div>
+  <div class="card-body">
+    <h3 class="title">{title}</h3>
+    <p class="description">{description}</p>
+  </div>
+  {link && (
+    <div class="card-footer">
+      <a href={link} class="project-link" target="_blank" rel="noopener noreferrer">
+        View Project <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  )}
+</div>
+
+<style>
+  .project-card {
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-header {
+    padding: var(--space-md);
+    border-bottom: var(--border-width) solid var(--border-color);
+    background-color: var(--color-tertiary-fixed);
+  }
+
+  .category {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    color: var(--color-on-tertiary-fixed);
+  }
+
+  .card-body {
+    padding: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .description {
+    color: var(--color-on-surface-variant);
+  }
+
+  .card-footer {
+    padding: var(--space-md);
+    border-top: var(--border-width) solid var(--border-color);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+  }
+</style>
