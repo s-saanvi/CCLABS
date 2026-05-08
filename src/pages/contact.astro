@@ -53,7 +53,7 @@ import CTAButton from '../components/CTAButton.astro';
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
           </form>
         </div>
       </div>
@@ -146,22 +146,7 @@ import CTAButton from '../components/CTAButton.astro';
   .submit-btn {
     width: 100%;
     padding: 16px;
-    font-family: var(--font-body);
-    font-weight: 500;
     font-size: var(--text-base);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: var(--border-width) solid var(--border-color);
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.15s ease;
-  }
-
-  .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
   }
 
   @media (max-width: 768px) {
